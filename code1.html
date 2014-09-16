@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
+<script>
+    function loadXMLDoc(){
+        var addthings = document.getElementById("addthings");
+
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function(){
+            if (xmlhttp.readyState==4 && xmlhttp.status==200){
+                var text = JSON.parse(xmlhttp.responseText);
+                console.log(text);
+                
+                var output = "<table class='table table-hover'>";
+                for (var ii = 0; ii < text.items.length; ii++) {
+                    var item = text.items[ii];
+                    var bool = item.done;
+                    output += "<tr><td id='" + bool + "'>" + item.description + "</td><td>" + item.done + "</td></tr>";
+                }
+                output += "</table>";
+                addthings.innerHTML = output;
+            }
+        }
+        xmlhttp.setRequestHeader;
+        //var toLoad = $('#input').val();
+        //var toOpen = toLoad + ".json";
+        var toOpen = $('#input').val();
+        xmlhttp.open("GET",toOpen,true);
+        xmlhttp.send();
+    }
+    
+    $(document).ready(function(){
+        $("#getSchedule").click(function () {
+            loadXMLDoc();
+        });
+    });
+  
+    
+</script>
+    
+    
+<style>
+    #false{
+        color: red; 
+    }
+    #true{
+        color:green;   
+    }
+    body{
+        padding:20px;   
+    }
+    table{
+        width: 100%;
+    }
+    td{
+        min-width:400px;
+        padding:1%;
+    }
+    
+</style>
+
+    
+    
+</head>
+<body>
+
+    <div id="question"><h2>What schedule do you want?</h2></div>
+    <input type="text" id="input">
+    <button type="button" id="getSchedule">Get Schedule!</button>
+    <div id="addthings"></div>
+
+</body>
+</html>
