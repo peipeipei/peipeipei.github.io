@@ -1,0 +1,17 @@
+{
+    "other": "ignore this part",
+    "x": {
+        "foo": "and this"
+    },
+    "items": [
+        {
+            "also": "ignore this property, too",
+            "description": "Answer the Doodle Poll",
+            "done": true
+        },
+        {
+            "description": "Set up my github.io user site",
+            "done": true
+        }
+    ]
+}

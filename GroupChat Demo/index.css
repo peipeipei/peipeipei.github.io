@@ -1,0 +1,35 @@
+body{
+    padding-top: 10px;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.date{
+    font-size: 20px;
+    font-weight: bolder;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: lightgrey;
+}
+
+.well{
+    background-color:transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    
+}
+
+.messageInput{
+    padding-top: 10px;
+    position: fixed;
+    bottom:0;
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.owner{
+    text-shadow: 1px 1px lightgrey;
+}
+
+    
